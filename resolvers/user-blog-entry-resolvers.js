@@ -3,11 +3,15 @@ const {tryFn} = require("../utils/utils");
 
 module.exports = {
   // Gets the user
-  getPost: (_, { _id }, _context) => {
-    if (_args._id) _args._id = ObjectId(_args._id)
-    return  _context.db
+  getPost:  async (_, { _id }, _context) => {
+
+    const data = await _context.db
       .collection('userBlogEntry')
-      .find(_args).toArray();
+      .find({"_id": ObjectId(_id)}).toArray();
+
+    console.log(data);
+
+    return data[0];
   },
   // Gets all the users
   getPosts: async (_, __, _context) => await _context.db

@@ -7,7 +7,6 @@ const tryFn = (fn, fallback = null) => {
   }
 };
 
-
 module.exports = {
   tryFn
 }

@@ -37,7 +37,7 @@ module.exports = gql`
         getBlogPost(_id: ID!): UserBlogEntry
         getBlogPosts: [UserBlogEntry]!
         getBlogPostsByUser(creator: ID!): [UserBlogEntry]
-       
+        ping: String @deprecated(reason: "Because Reason")
     }
 
     type Mutation {
